@@ -1,37 +1,79 @@
-body {
+* {
     box-sizing: border-box;
-    /* max-width: 800px; */
-    margin: auto;
-    margin-top: auto;
-    position: fixed;                   
-    top: 50%;                           
-    left: 50%;                          
-    transform: translate(-50%, -50%); 
-
-}
-
-div {
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border: 1px red solid;
-    box-sizing: border-box;
-    background-color: yellow;
-}
-
-h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: xx-large;
-    font-weight: bolder;
-    text-align: center;
-    height: 40px;
-    background-color: aquamarine;
-    border: 2px solid;
-    text-decoration-line: underline;
-    margin-top: auto;
-}
-
-ol {
-    box-sizing: border-box;
-    padding: 0 150px;
+    /* border: rgb(53, 83, 53) solid; */
+    margin: 2px;
+    padding: 0px;
     
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+nav {
+    
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.container {
+    flex: 1;
+}
+
+.profile-picture {
+    height: 20px;
+    width: auto;
+}
+.social-icons img{
+    height: 10px;
+    width: auto;
+  
+}
+
+.attention-grabber {
+    display: flex;
+}
+
+.bar {
+    background-color: black;
+    height: 10px;
+}
+
+.project-post{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.project-post img{
+    width: 450px;
+    height: auto;
+}
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+}
+.project-section h2{ 
+    
+}
+
+.project-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer,.contact {
+    display: flex;
+    justify-content: space-between;
 }
