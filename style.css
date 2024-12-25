@@ -7,7 +7,6 @@
 }
 
 body {
-    border-color: orange;
     display: flex;
     flex-direction: column;
     /* height: 100vh; */
@@ -18,7 +17,6 @@ body {
 
 nav{
     margin-top: 6%;
-    border-color: blue;
     display: flex;
     justify-content: center;
     gap: 16px;
@@ -35,9 +33,8 @@ a {
 .container {
     flex: 1;
     display: flex;
-    border-color: blueviolet;
     align-items: center;
-    width: 65%;
+    width: 80%;
 }
 
 
@@ -45,7 +42,7 @@ a {
 
 .attention-grabber {
     flex: 1;
-    border-color: blue;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -60,13 +57,15 @@ a {
     border-radius: 100%;
 }
 .author-description {
+    border-color: brown;
     max-width: calc(33.333%);
-    flex: 1 1 calc(33.333%);;
+    flex: 1 1 calc(33.333%);
     display: flex;
     flex-direction: column;
     margin-top: 8%;
     padding: 0px 2%;
-    justify-content: center;
+    
+    justify-content: end;
 
 }
 
@@ -79,57 +78,68 @@ a {
     
 }
 .social-icons-description img{
-    max-width: 20px;
+    max-width: 20%;
     max-height: 20px;
 }
 
 .textleft {
+    flex: 1;
     max-width: 100%;
     text-align: end;
     justify-content:stretch;
 }
 .textright{
+    flex: 1;
+    min-width: calc(33.333%);
+    max-height: 20%;
     max-width: 100%;
-    border-color: aquamarine;
-
+    
 
     
 }
 
 
 .bar {
-    flex: 1;
+    /* flex: 1; */
     background-color: black;
-    min-height: 20px;
-    min-width: 100% ;
+    height: 20px;
+    width: 100% ;
   
 }
 
 .project-post-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    /* margin: auto; */
+    justify-content: space-evenly;
+    margin: auto;
     padding: 2%;
+    max-width: 90%;
+    
     
 }
-.project-post-container img{
-    width: 450px;
-    /* height: auto; */
-    min-width: 45%;
-    max-width: 100%;
-    height: auto;
+.project-post-container .box{
+    height: 25em;
+    text-align: center;
+    align-content: center;
+    color: rgb(0, 0, 0);
+    background-color: aquamarine;
+    border-radius: 10%;
+    width: 100%;
+}
+.project-post-container .project-title{
+    margin: 3% 0;
+
 }
 
 .project-section {
-    border-color: rgb(235, 23, 23);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 0px;
 }
 .project-post {
-    margin-bottom: 1%;
+    margin-bottom: 2%;
+    
 }
 
 
@@ -141,7 +151,7 @@ a {
 footer {
     background-color: black;
     color: white;
-    min-width: 100%;
+    width: 100%;
 }
 .footer {
     flex: 1;
