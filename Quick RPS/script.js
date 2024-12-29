@@ -1,3 +1,7 @@
+
+
+
+
 // function for picking all html emements to listen to 
 
 function possibleChoices() {
@@ -23,28 +27,52 @@ function userChoiceSelector(func){
 }
 
 // function to determin if computer choice and user choice match
+var compChoice = compChoiceSelector(possibleChoices);
+console.log(`Comp selected: ${compChoice}`)
+let lives = 5;
+
 function getClicked(event) {
     const userClickedChoice = event.target.textContent || event.target.value;
+
     
     switch (userClickedChoice) {
         case compChoice:
             console.log('correct');
             document.getElementById('message').innerHTML=`Your guessed right: ${userClickedChoice}`
+            gameContinue(0);
             break;
-        default:
-            console.log('incorrect');
+            default:
+                console.log('incorrect');
+                
+                document.getElementById('message').innerHTML=`Your guessed wrong: The correct answer is ${compChoice}`
+                lives -= 1;
+                gameContinue(lives);
+                break;
+            }
+    document.getElementById('attempts').innerHTML=`Lives left: ${lives}`
+    // console.log(`Comp selected: ${compChoice}`)
+}
 
-            document.getElementById('message').innerHTML=`Your guessed wrong: The correct answer is ${compChoice}`
 
-        }
 
+
+function gameContinue(lives ){
+    if (lives <= 0 )  {
+        const userOption = possibleChoices();
+        userOption.forEach(choice => {
+            choice.disabled = true;
+        })
+        
+        
+        document.getElementById('message').innerHTML = 'Game Over! No lives left.';
+        
+        
     }
+    else{
+        
+        compChoice = compChoiceSelector(possibleChoices);
+        console.log(`Comp selected: ${compChoice}`)
+    };
+}
 
-
-
-
-const compChoice = compChoiceSelector(possibleChoices);
-console.log(`This is the ${compChoice}`)
-const userChoice = userChoiceSelector(possibleChoices);
-
-
+userChoiceSelector(possibleChoices);
