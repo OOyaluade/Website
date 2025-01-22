@@ -1,6 +1,8 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 
 @app.route('/')
 def index():
@@ -18,4 +20,4 @@ def contact():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='10.1.10.39')
+    app.run(debug=True)
