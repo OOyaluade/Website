@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Post{% endblock %}
+{% block content %}	
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>{{ article.title }}</h1>
+							<span class="image main"><img src="{{ article.banner_image }}" alt="" /></span>
+							<h2>{{ article.subtitle }}</h2>
+							<p>{{ article.body }}</p>
+						</div>
+					</div>
+{% endblock %}
+
+
+
+{% block scripts %}
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+{% endblock %}

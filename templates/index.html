@@ -1,132 +1,43 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Index</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!-- Use Flask's `url_for` to reference CSS files -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
-		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-		<div id="wrapper">
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
 
-			<!-- Header -->
-			<header id="header">
-				<div class="inner">
-
-					<!-- Logo -->
-					<a href="index.html" class="logo">
-						<span class="symbol"><img src="{{ url_for('static', filename='assets/images/logo.svg') }}" alt="Logo" /></span>
-						<span class="title">Oluwadamilola Oyaluade</span>
-					</a>
-
-					<!-- Nav -->
-					<nav>
-						<ul>
-							<li><a href="#menu">Menu</a></li>
-						</ul>
-					</nav>
-
-				</div>
-			</header>
-
-			<!-- Menu -->
-			<nav id="menu">
-				<h2>Menu</h2>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="{{ url_for('post') }}">Post</a></li>
-					<li><a href="{{ url_for('about') }}">About</a></li>
-
-				</ul>
-			</nav>
-
-			<!-- Main -->
-			<div id="main">
-				<div class="inner">
-					<header>
-						<h1> Cloud and Storage Architect<br /></h1>
-						<p>I specialize in engineering and architecting diverse cloud solutions, leveraging AWS and Infrastructure as Code to build scalable and efficient systems.</p>
-					</header>
-					<section class="tiles">
-						<!-- Use Flask's `url_for` to reference images -->
-
-
-<!--						For loop here-->
-						<article class="style1">
-							<span class="image">
-								<img src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" alt="Magna" />
-							</span>
-							<a href="generic.html">
-								<h2>Magna</h2>
-								<div class="content">
-									<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-								</div>
-							</a>
-						</article>
-						<article class="style2">
-							<span class="image">
-								<img src="{{ url_for('static', filename='assets/images/pic02.jpg') }}" alt="Lorem" />
-							</span>
-							<a href="generic.html">
-								<h2>Lorem</h2>
-								<div class="content">
-									<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-								</div>
-							</a>
-						</article>
-						<!-- Repeat for other images -->
-					</section>
-				</div>
-			</div>
-
-			<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<section>
-						<h2><a href="{{ url_for('contact') }}">Get in touch</a></h2>
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half">
-									<input type="text" name="name" id="name" placeholder="Name" />
-								</div>
-								<div class="field half">
-									<input type="email" name="email" id="email" placeholder="Email" />
-								</div>
-								<div class="field">
-									<textarea name="message" id="message" placeholder="Message"></textarea>
-								</div>
+<div id="wrapper">
+{% block content %}
+<div id="main">
+	<div class="inner">
+		<header>
+			<h1> Cloud and Storage Architect<br /></h1>
+			<p>I specialize in engineering and architecting diverse cloud solutions, leveraging AWS and Infrastructure as Code to build scalable and efficient systems.</p>
+		</header>
+			<!-- Use Flask's `url_for` to reference images -->
+			<section class="tiles">
+					{% for article in articles %}
+					<article class="style1">
+						<span class="image">
+							<img src="{{ article.thumbnail_image }}" alt="{{ article.thumbnail_image }}" />
+						</span>
+						<a href="{{ url_for('article', article_id=article.id) }}">
+							<h2>{{ article.title }}</h2>
+							<div class="content">
+								<p>{{ article.description }}</p>
 							</div>
-							<ul class="actions">
-								<li><input type="submit" value="Send" class="primary" /></li>
-							</ul>
-						</form>
-					</section>
-					<section>
-						<h2>Follow</h2>
-						<ul class="icons">
-							<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</section>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved</li><li>Design: ???</li>
-					</ul>
-				</div>
-			</footer>
+							div class="content">
+								<p>{{ article.body }}</p>
+						</a>
+					</article>
+					{% endfor %}
+				</section>
+			
+	</div>
+</div>
+{% endblock %}
 
-		</div>
+{% block scripts %}
 
-		<!-- Scripts -->
-		<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/util.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
-	</body>
-</html>
+{% endblock %}
