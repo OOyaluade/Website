@@ -32,6 +32,14 @@
 </div>
 {% endblock %}
 
+{% block sidebar %}
+<div class="actions button-container-div">
+    <div class="button-container">
+        <a href="{{ url_for('new_article') }}" class="button primary">Create New Article</a>
+        </div>
+</div>
+{% endblock %}
+
 {% block scripts %}
 
 <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>

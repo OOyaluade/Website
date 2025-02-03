@@ -19,7 +19,9 @@
         {% block content %}{% endblock %}
         </div>
     </main>
-    
+    <div id="wrapper">
+        {% block sidebar %}{% endblock %}
+    </div>
     <footer>
         <div id="wrapper">    
         {% include 'footer.html' %}

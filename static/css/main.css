@@ -2561,6 +2561,17 @@ input, select, textarea {
 			opacity: 0.25;
 		}
 
+		.button-container {
+			display: flex;
+			justify-content: center;  /* Centers horizontally */
+			align-items: center;      /* Aligns items vertically */
+			gap: 10px;                /* Adds spacing between buttons */
+			margin-top: 20px;         /* Adjust spacing from content */
+		}
+		.button-container-div {
+			padding-top: 0px;
+
+		}
 /* Tiles */
 
 	.tiles {
