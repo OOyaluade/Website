@@ -12,15 +12,17 @@
 			<!-- Use Flask's `url_for` to reference images -->
 			<section class="tiles">
 					{% for article in articles %}
-					<article class="{{ article.style_class }}">
+					<article class="style1">
 						<span class="image">
-							<img src="{{ url_for('static', filename=article.image) }}" alt="{{ article.title }}" />
+							<img src="{{ article.thumbnail_image }}" alt="{{ article.thumbnail_image }}" />
 						</span>
-						<a href="{{ article.link }}">
+						<a href="{{ url_for('article', article_id=article.id) }}">
 							<h2>{{ article.title }}</h2>
 							<div class="content">
 								<p>{{ article.description }}</p>
 							</div>
+							div class="content">
+								<p>{{ article.body }}</p>
 						</a>
 					</article>
 					{% endfor %}
@@ -28,4 +30,14 @@
 			
 	</div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 {% endblock %}
