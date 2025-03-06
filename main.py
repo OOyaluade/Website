@@ -259,7 +259,8 @@ def contact():
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--host', default='127.0.0.1', help='The host address to bind to')
-    args = parser.parse_args()
-    app.run(host=args.host, debug=False)
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('--host', default='127.0.0.1', help='The host address to bind to')
+    # args = parser.parse_args()
+    # app.run(host=args.host, debug=False)
+        app.run(debug=False)
