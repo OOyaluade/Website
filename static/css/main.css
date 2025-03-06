@@ -2355,7 +2355,7 @@ input, select, textarea {
 		.image.main {
 			display: block;
 			margin: 0 0 3em 0;
-			width: 100%;
+			width: 30%;
 		}
 
 			.image.main img {
@@ -3303,3 +3303,30 @@ input, select, textarea {
 			}
 
 		}
+
+
+
+/* ################################# CUSTOM DESIGN ############################################## */
+/* Override background and text colors */
+/* Override background and text colors */
+body {
+	background-color: #000 !important;
+	color: #fff !important;
+  }
+  
+  a {
+	color: #fff !important;
+	border-bottom-color: #fff !important;
+  }
+  
+  /* Set footer background to gray */
+  #footer {
+	background-color: #333 !important; /* Adjust this value for lighter or darker gray */
+  }
+  
+  /* Override other elements as needed */
+  header, section, article, .box, .tiles {
+	background-color: transparent;
+	color: inherit;
+  }
+  

@@ -7,7 +7,12 @@
 	<div class="inner">
 		<header>
 			<h1> Cloud and Storage Architect<br /></h1>
-			<p>I specialize in engineering and architecting diverse cloud solutions, leveraging AWS and Infrastructure as Code to build scalable and efficient systems.</p>
+			<p>I’m a Cloud Engineer with robust AWS expertise and a focus on developing solutions that meet 
+				stringent HIPAA requirements. I design and deploy cloud-native systems with practices such as 
+				robust encryption, strict access controls, continuous monitoring, and regular risk assessments 
+				to ensure data integrity and confidentiality. My experience spans automating processes, implementing 
+				CI/CD pipelines, and integrating both cloud and on-premises environments while maintaining the highest security standards.
+				 I thrive on solving complex challenges and driving operational excellence through secure, compliant cloud innovation.</p>
 		</header>
 			<!-- Use Flask's `url_for` to reference images -->
 			<section class="tiles">
@@ -21,8 +26,7 @@
 							<div class="content">
 								<p>{{ article.description }}</p>
 							</div>
-							div class="content">
-								<p>{{ article.body }}</p>
+
 						</a>
 					</article>
 					{% endfor %}
@@ -35,7 +39,8 @@
 {% block sidebar %}
 <div class="actions button-container-div">
     <div class="button-container">
-		{% if current_user.is_authenticated %}
+	
+		{% if authenticated %}
         <a href="{{ url_for('new_article') }}" class="button primary">Create New Article</a>
 		{% endif %}
 	</div>
