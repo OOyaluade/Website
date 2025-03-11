@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve the Flask Website
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=~/Website
+Environment="PATH=~/Website/venv/bin"
+ExecStart=~/Website/venv/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 main:app
+
+[Install]
+WantedBy=multi-user.target
