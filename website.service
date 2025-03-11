@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=root
 Group=root
-WorkingDirectory=/root/Website
-Environment="PATH=/root/Website/venv/bin"
-ExecStart=/root/Website/venv/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 main:app
+WorkingDirectory=/home/ec2-user/Website
+Environment="PATH=/home/ec2-user/Website/venv/bin"
+ExecStart=/home/ec2-user/Website/venv/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 main:app
 
 [Install]
 WantedBy=multi-user.target
