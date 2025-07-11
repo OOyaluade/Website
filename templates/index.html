@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+<div id="wrapper">
+{% block content %}
+<div id="main">
+	<div class="inner">
+		<header>
+			<h1> Cloud and Storage Architect<br /></h1>
+			<p>I’m a Cloud Engineer with robust AWS expertise and a focus on developing solutions that meet 
+				stringent HIPAA requirements. I design and deploy cloud-native systems with practices such as 
+				robust encryption, strict access controls, continuous monitoring, and regular risk assessments 
+				to ensure data integrity and confidentiality. My experience spans automating processes, implementing 
+				CI/CD pipelines, and integrating both cloud and on-premises environments while maintaining the highest security standards.
+				 I thrive on solving complex challenges and driving operational excellence through secure, compliant cloud innovation.</p>
+		</header>
+			<!-- Use Flask's `url_for` to reference images -->
+			<section class="tiles">
+					{% for article in articles %}
+					<article class="style1">
+						<span class="image">
+							<img src="{{ article.thumbnail_image }}" alt="{{ article.thumbnail_image }}" />
+						</span>
+						<a href="{{ url_for('article', article_id=article.id) }}">
+							<h2>{{ article.title }}</h2>
+							<div class="content">
+								<p>{{ article.description }}</p>
+							</div>
+
+						</a>
+					</article>
+					{% endfor %}
+				</section>
+			
+	</div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="actions button-container-div">
+    <div class="button-container">
+	
+		{% if authenticated %}
+        <a href="{{ url_for('new_article') }}" class="button primary">Create New Article</a>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}

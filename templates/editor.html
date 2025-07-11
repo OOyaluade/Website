@@ -1,0 +1,23 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+{% block title %}Post{% endblock %}
+{% block content %}	
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							{{ ckeditor.load() }} {{ ckeditor.config(name='body') }}
+							{{ render_form(article_form) }}
+						</div>
+					</div>
+{% endblock %}
+
+
+{% block scripts %}
+			<!-- Scripts -->
+	
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+<div id="wrapper">
+{% block content %}
+				<!-- Main -->
+                <div id="main">
+                    <div class="inner">
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                          {% for message in messages %}
+                            <p>{{ message }}</p>
+                          {% endfor %}
+                        {% endif %}
+                      {% endwith %}
+                      
+                        {{ ckeditor.load() }} {{ ckeditor.config(name='body') }}
+                        {{ render_form(user_form) }}
+                    </div>
+                </div>
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+<div id="wrapper">
+{% block content %}
+<div id="main">
+	<div class="inner">
+		<header>
+
+			<p>I specialize in engineering and architecting diverse cloud solutions, leveraging AWS and Infrastructure as Code to build scalable and efficient systems.</p>
+		</header>
+			<!-- Use Flask's `url_for` to reference images -->
+
+			
+	</div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="actions button-container-div">
+    <div class="button-container">
+	
+		{% if authenticated %}
+        <a href="{{ url_for('new_article') }}" class="button primary">Create New Article</a>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}
